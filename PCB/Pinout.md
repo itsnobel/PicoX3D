@@ -34,12 +34,3 @@ Project: **PicoX3D (Hack Club Freestyle Tier 1)**
 | **Pin 31** | **GP26 (ADC0)** | Hotend Thermistor (TEMP_0) | NTC 100K with $4.7\text{k}\Omega$ pull-up to $+3.3\text{V}$ |
 | **Pin 32** | **GP27 (ADC1)** | Bed Thermistor (TEMP_BED) | NTC 100K with $4.7\text{k}\Omega$ pull-up to $+3.3\text{V}$ |
 | **Pin 34** | **GP28** | Touch Interrupt Signal (T_IRQ) | XPT2046 Touch IC |
-
----
-
-## Additional Hardware Power & Bus Connections
-
-* **Stepper Driver Power (VMOT):** Tied to the main $+12\text{V} / +24\text{V}$ power input rail, filtered with individual $100\mu\text{F}$ electrolytic capacitors per driver.
-* **Driver Enable (EN):** All driver **EN** pins are permanently tied to **GND** on the PCB to keep stepper drivers active at all times.
-* **Logic Power (VIO):** Connected to the Pico's regulated $+3.3\text{V}$ output rail.
-* **USB Host (Pendrive):** USB-A Female Socket connected to the Pico's USB data lines with a $0.5\text{A}$ resettable fuse on VBUS ($+5\text{V}$).
