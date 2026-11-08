@@ -13,13 +13,13 @@ PicoX3d is a custom made 3D printer that uses raspberry Pi Pico for controlling.
 ---
 
 ## Hardware List(Only For The PCB)
-*Raspberry Pi Pico / Pico 2
-*TMC2209 Stepper Driver Modules (4 pcs)
-*2.8" SPI TFT Touch Display Module
-*USB-A Female Socket (USB Host)
-*IRLB3034 MOSFETs & PC817 Optocouplers
-*Screw Terminals & JST XH Connectors (2-pin, 3-pin, 4-pin)
-*Passive components (100µF capacitors, 4.7kΩ/10kΩ resistors)
+* Raspberry Pi Pico / Pico 2
+* TMC2209 Stepper Driver Modules (4 pcs)
+* 2.8" SPI TFT Touch Display Module
+* USB-A Female Socket (USB Host)
+* IRLB3034 MOSFETs & PC817 Optocouplers
+* Screw Terminals & JST XH Connectors (2-pin, 3-pin, 4-pin)
+* Passive components (100µF capacitors, 4.7kΩ/10kΩ resistors)
 
 ---
 
