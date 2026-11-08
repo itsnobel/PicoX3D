@@ -1,0 +1,45 @@
+# PicoX3D Master Pinout Reference
+
+Board Target: **Raspberry Pi Pico / Pico 2 (RP2040 / RP2350)**  
+Firmware Compatibility: **Marlin 2.x / Klipper**  
+Project: **PicoX3D (Hack Club Freestyle Tier 1)**
+
+## Pico GPIO Master Mapping Table
+
+| Pico Pin | GPIO / Function | Connected Peripheral / Component | Subsystem / Notes |
+| :--- | :--- | :--- | :--- |
+| **Pin 1** | **GP0** | X-Axis Stepper Driver (STEP) | TMC2209 StepStick (U1) |
+| **Pin 2** | **GP1** | X-Axis Stepper Driver (DIR) | TMC2209 StepStick (U1) |
+| **Pin 4** | **GP2** | Y-Axis Stepper Driver (STEP) | TMC2209 StepStick (U2) |
+| **Pin 5** | **GP3** | Y-Axis Stepper Driver (DIR) | TMC2209 StepStick (U2) |
+| **Pin 6** | **GP4** | Z-Axis Stepper Driver (STEP) | TMC2209 StepStick (U3) |
+| **Pin 7** | **GP5** | Z-Axis Stepper Driver (DIR) | TMC2209 StepStick (U3) |
+| **Pin 9** | **GP6** | E0 Extruder Driver (STEP) | TMC2209 StepStick (U13) |
+| **Pin 10** | **GP7** | E0 Extruder Driver (DIR) | TMC2209 StepStick (U13) |
+| **Pin 11** | **GP8** | TMC2209 UART (Shared Bus) | Connected via $1\text{k}\Omega$ resistors to all 4 drivers |
+| **Pin 12** | **GP9** | X-Min Limit Switch | JST XH 3-Pin (`XH2.54-3P`) |
+| **Pin 14** | **GP10** | Y-Min Limit Switch | JST XH 3-Pin (`XH2.54-3P`) |
+| **Pin 15** | **GP11** | Z-Min Limit Switch | JST XH 3-Pin (`XH2.54-3P`) |
+| **Pin 16** | **GP12** | Hotend Heater MOSFET | IRLB3034 (via PC817 Optocoupler) |
+| **Pin 17** | **GP13** | Heated Bed MOSFET | IRLB3034 (via PC817 Optocoupler) |
+| **Pin 19** | **GP14** | Display Chip Select (CS) | ILI9341 2.8" TFT LCD |
+| **Pin 20** | **GP15** | Display Data/Command (DC/RS) | ILI9341 2.8" TFT LCD |
+| **Pin 21** | **GP16** | SPI0 MISO (Shared Data Out) | Shared between Touch Controller & SD Card Slot |
+| **Pin 22** | **GP17** | *Unassigned / Reserved* | Available for expansion |
+| **Pin 24** | **GP18** | SPI0 SCK (Shared Clock) | Shared between Display, Touch & SD Card Slot |
+| **Pin 25** | **GP19** | SPI0 MOSI (Shared Data In) | Shared between Display, Touch & SD Card Slot |
+| **Pin 26** | **GP20** | MicroSD Card Chip Select (CS) | Onboard TF Card Slot |
+| **Pin 27** | **GP21** | Touch Controller Chip Select (T_CS) | XPT2046 Touch IC |
+| **Pin 28** | **GP22** | Display & Touch Hardware RESET | Shared Reset Line |
+| **Pin 31** | **GP26 (ADC0)** | Hotend Thermistor (TEMP_0) | NTC 100K with $4.7\text{k}\Omega$ pull-up to $+3.3\text{V}$ |
+| **Pin 32** | **GP27 (ADC1)** | Bed Thermistor (TEMP_BED) | NTC 100K with $4.7\text{k}\Omega$ pull-up to $+3.3\text{V}$ |
+| **Pin 34** | **GP28** | Touch Interrupt Signal (T_IRQ) | XPT2046 Touch IC |
+
+---
+
+## Additional Hardware Power & Bus Connections
+
+* **Stepper Driver Power (VMOT):** Tied to the main $+12\text{V} / +24\text{V}$ power input rail, filtered with individual $100\mu\text{F}$ electrolytic capacitors per driver.
+* **Driver Enable (EN):** All driver **EN** pins are permanently tied to **GND** on the PCB to keep stepper drivers active at all times.
+* **Logic Power (VIO):** Connected to the Pico's regulated $+3.3\text{V}$ output rail.
+* **USB Host (Pendrive):** USB-A Female Socket connected to the Pico's USB data lines with a $0.5\text{A}$ resettable fuse on VBUS ($+5\text{V}$).
