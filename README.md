@@ -38,6 +38,13 @@ The PCB design is neat, compact with headers and all the parts in a short space 
 
 ---
 
+## Firmware Setup
+Key Configuration:
+- Architecture: RP2040 / RP2350 Architecture
+- Stepper Driver Communication: Single-wire Software/Hardware UART on GP8
+- Display Driver: ST7789 / ILI9341 SPI (Shared SPI0 Bus)
+- Touch Driver: XPT2046 SPI Touch Controller
+
 
 ## The CAD Model
 
@@ -48,6 +55,7 @@ Some visualizations-
 <img width="955" height="816" alt="Screenshot 2026-11-08 112629" src="https://github.com/user-attachments/assets/b7187b27-1b8e-4f09-930c-8510fad52435" />
 <img width="1066" height="829" alt="Screenshot 2026-11-08 112700" src="https://github.com/user-attachments/assets/dc453a41-d7f9-46b1-838f-c0596fbaef6f" />
 
+---
 
 
 
